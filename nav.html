@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  /* For desktop */
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Add other styling properties */
+  }
+  
+  .nav-options {
+    display: flex;
+    list-style: none;
+    /* Additional styling */
+  }
+  
+  .mobile-menu-icon {
+    display: none; /* Hide on desktop */
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 767px) {
+  .brand, .nav-options {
+    display: none; /* Hide on mobile by default */
+  }
+  
+  .mobile-menu-icon {
+    display: block; /* Show mobile menu icon */
+    /* Styling for the icon */
+  }
+  
+  .nav-options.active {
+    display: block; /* Show options when active */
+    /* Additional styling */
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">
+          <h1>BrandName</h1>
+        </div>
+        <ul class="nav-options">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    <script>const menuToggle = document.querySelector('.menu-toggle');
+        const navOptions = document.querySelector('.nav-options');
+        
+        menuToggle.addEventListener('click', () => {
+          navOptions.classList.toggle('active');
+        });
+        </script>  
+</body>
+</html>
